@@ -1,0 +1,36 @@
+<nav>
+  <hr>
+  <div class="banner">
+    <h2>Artesan IA</h2>
+    <p>We investigate the market so that you can focus on <span>what you truly care about</span></p>
+    <div class="links">
+    <div class="dropdown">
+        <p class="language">EN <span>▼</span></p>
+        <div class="lang-menu">
+        <a href="/es/demo">ES</a>
+        <a href="/ca/demo">CA</a>
+        </div>  
+    </div>
+    <a href="/">Home</a>
+    <a href="/demo">Demo</a>  
+    </div>
+  </div>
+  <hr>
+</nav>
+<body>
+    <section id="demo">
+        <div class="background-clear"></div>
+        <div class="demo-work">
+            {{#if logged}}
+            <p class="login logged-user">Hello {{logged.username}}</p> 
+            {{else}}
+            <a href="auth/login" class="orange-button login">Log in</a>
+            {{/if}}
+            <h4>We are working on our demo.</h4>
+            <p>Important! Please read.</p>
+            <p>If we have given you an username and password you can press the button on top to log in and see the early access demo.</p>
+            <p class="light-font">If you want to get credentials to see the demo, please write us in the contact mail</p>
+            <a href="/demo/show" class="orange-button">See the demo</a>
+        </div>
+    </section>    
+</body>

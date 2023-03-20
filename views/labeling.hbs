@@ -1,0 +1,72 @@
+<nav>
+  <hr />
+  <div class="banner">
+    <h2>Artesan IA</h2>
+    <p>We investigate the market so that you can focus on
+      <span>what you truly care about</span></p>
+    <div class="links">
+      <div class="dropdown">
+        <p class="language">EN <span>▼</span></p>
+        <div class="lang-menu">
+          <a href="/es">ES</a>
+          <a href="/ca">CA</a>
+        </div>
+      </div>
+      <a href="/">Home</a>
+      <a href="/demo">Demo</a>
+      <a href="/labeling">Labeling</a>
+    </div>
+  </div>
+  <hr />
+</nav>
+<body>
+    <section id="labeling">
+        <p class="label-review">{{review}}</p>
+        <form action="/labeling" method="post">
+        {{#if openai_labels}}
+          <h4>Open AI</h4>
+          <table>
+            <tr>
+              <th>Word</th>
+              <th>Label</th>
+            </tr>
+            {{#each openai_labels}}
+              <tr>
+                <input type="text" name="{{openai_labels._id}}" value="{{openai_labels.word}}">{{openai_labels.word}}</td>
+                <td>{{openai_labels.label}}</td>
+              </tr>
+            {{/each}}            
+          </table>
+        {{/if}}
+        {{#if labels_anna}}
+          <h4>Labels Anna</h4>
+          <table>
+            <tr>
+              <th>Word</th>
+              <th>Label</th>
+            </tr>
+            {{#each labels_anna}}
+              <tr>
+                <td>{{labels_anna.word}}</td>
+                <td>{{labels_anna.label}}</td>
+              </tr>
+            {{/each}}            
+          </table>
+        {{/if}}
+        {{#if labels_eliza}}
+          <h4>Labels Eliza</h4>
+          <table>
+            <tr>
+              <th>Word</th>
+              <th>Label</th>
+            </tr>
+            {{#each labels_eliza}}
+              <tr>
+                <td>{{labels_eliza}}</td>
+                <td>{{labels_eliza}}</td>
+              </tr>
+            {{/each}}            
+          </table>
+        </form>
+    </section>
+</body>
