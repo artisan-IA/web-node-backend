@@ -20,8 +20,8 @@ router.post('/login', async function (req, res, next) {
         const user = await User.findOne({ username: username })
         const match = await bcrypt.compare(password, user.hashedPassword);
         if (match) {
-            const { id, username } = user;
-            const payload = { id, username };
+            const { id, username, type } = user;
+            const payload = { id, username, type };
             const authToken = jwt.sign( 
                 payload,
                 process.env.TOKEN_SECRET,
